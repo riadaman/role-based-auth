@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "63911049-cbeb-4659-8e53-89a029f7f076",
+		"name": "Role Base Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22612235"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"john\",\r\n    \"email\": \"john@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"john@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "getUserProfile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhlNDUzMjE5MDU4ODA2NDJjNjJiMWQiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1NDE1NDM5MiwiZXhwIjoxNzU0MTU1MjkyfQ.gWih6wAb2MORRWjOQxubCi8wyqtW6Fkc2WsJQVbNcQA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/users/me"
+			},
+			"response": []
+		},
+		{
+			"name": "allUser(admin)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhlNDUzMjE5MDU4ODA2NDJjNjJiMWQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxNTUzNDYsImV4cCI6MTc1NDE1NjI0Nn0.gNUTG83I4kikRtj-RM0sBTMGUv29NtgFTrIpx-Z927o"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODhlNDUzMjE5MDU4ODA2NDJjNjJiMWQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NTQxNTUzNDYsImV4cCI6MTc1NDE1NjI0Nn0.gNUTG83I4kikRtj-RM0sBTMGUv29NtgFTrIpx-Z927o"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/users/688e448f9c648d1261a638fe"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
