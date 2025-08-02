@@ -20,10 +20,13 @@ export const register = async (req, res) => {
       password: hashedPassword,
     });
     return res.status(201).json({
-      _id: user._id,
-      username: user.username,
-      email: user.email,
-      role: user.role,
+      message: "User registered successfully",
+      user: {
+        _id: user._id,
+        username: user.username,
+        email: user.email,
+        role: user.role,
+      }
     });
     } catch (error) {
         console.log(error);

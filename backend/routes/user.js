@@ -2,7 +2,7 @@ import express from 'express';
 import { verifyRole, verifyToken } from '../middleware/authMiddlware.js';
 import { deleteUser, getProfile, getUsers } from '../controller/userController.js';
 
-const app = express();
+const router = express.Router();
 
 router.get("/",verifyToken,verifyRole("admin"),getUsers);
 router.delete("/:id", verifyToken, verifyRole("admin"), deleteUser);
