@@ -1,6 +1,6 @@
-import User from "../models/User";
+import User from "../models/User.js";
 
-export const getUserProfile = async (req, res) => {
+export const getUsers = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
